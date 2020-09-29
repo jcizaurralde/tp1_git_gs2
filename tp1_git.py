@@ -12,19 +12,25 @@ impuesto=0
 
 print("Bienvenido al sistema tributario Rosarino")
 
-cliente=int(input("Para consultar si ustede debe tributar o no, presione cualquier numero mayor a 0 "))
-while cliente>0:
-    edad=int(input("Ingrese su edad "))
-    ingresos=float(input("Ingrese sus ingresos mensuales "))
-    if edad>16:
-        if edad<40:
-            impuesto= ingresos*10/100
-            print ("Usted debe pagar de impuesto a los ingresos: $ ",impuesto)
-            break
+cliente = int(input("Para consultar si ustede debe tributar o no, presione el numero 1 "))
+while cliente == 1:
+    edad = int(input("Ingrese su edad "))
+    ingresos = float(input("Ingrese sus ingresos mensuales "))
+    if ingresos >= 9000:
+        if edad > 16:
+            if edad < 40:
+
+                impuesto = ingresos * 10 / 100
+                print("Usted debe pagar de impuesto a los ingresos: $ ", impuesto)
+                break
+            else:
+                impuesto = ingresos * 5 / 100
+                print("Usted debe pagar de impuesto a los ingresos: $ ", impuesto)
+                break
+
         else:
-            impuesto= ingresos*5/100
-            print ("Usted debe pagar de impuesto a los ingresos: $ ",impuesto)
+            print("Usted es menor de 16 años, no debe tributar")
             break
     else:
-        print("Usted es menor de 16 años, no debe tributar")
+        print("Sus ingresos deben ser iguales o superiores a $ 9000 mensuales ")
         break
